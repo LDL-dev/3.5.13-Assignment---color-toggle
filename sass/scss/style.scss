@@ -1,0 +1,79 @@
+$menu-width: 300px;
+$nav__btn-width: 100px;
+$nav__btn-height: 100px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  &__text {
+    font-size: large;
+    padding-left: 150px;
+    padding-top: 40px;
+  }
+  &--bg-color {
+    background: #d3d3d3;
+  }
+}
+
+.nav {
+  position: fixed;
+  width: $nav__btn-width;
+  height: $nav__btn-height;
+  // display: flex;
+  // flex-direction: column;
+  &__btn {
+    cursor: pointer;
+    &__img {
+      max-width: $nav__btn-width;
+      max-height: $nav__btn-height;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__menu {
+    position: relative;
+    display: flex;
+    width: $menu-width;
+    height: 0;
+    left: -$menu-width;
+    flex-direction: column;
+    visibility: hidden;
+    transition: all 400ms ease;
+    &--expanded {
+        visibility: visible;
+        height: 100%;
+        left: 0;
+    }
+  }
+  &__item {
+    box-sizing: border-box;
+    list-style: none;
+    margin-bottom: 3px;
+    padding: 15px;
+    cursor: pointer;
+    &:hover {
+      font-size: large;
+    }
+    &--grey-bg {
+      background: #d3d3d3;
+    }
+    &--orange-bg {
+      background: #ffa500;
+    }
+    &--purple-bg {
+      background: #800080;
+    }
+    &--green-bg {
+      background: #008000;
+    }
+    &--red-bg {
+      background: #ff0000;
+    }
+  }
+}
